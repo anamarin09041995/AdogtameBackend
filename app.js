@@ -10,6 +10,7 @@ var cors = require('cors');
 // var index = require('./routes/index');
 var users = require('./routes/users');
 var mascotas = require('./routes/mascotas');
+var fundaciones = require('./routes/fundaciones');
 
 var app = express();
 app.use(cors());
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/', index);
 app.use('/users', users);
 app.use('/mascotas', mascotas);
+app.use('/fundaciones', fundaciones);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
