@@ -15,8 +15,8 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-    let mascota = req.body;
-    req.collection.insert(mascota).then(result => {
+    let book = req.body;
+    req.collection.insert(book).then(result => {
         res.send({ success: true });
     }).catch(err => {
         res.send({ success: false });
@@ -25,8 +25,8 @@ router.post("/", (req, res, next) => {
 
 router.put("/:id", (req, res, next) => {
     let id = new ObjectID(req.params.id);
-    let mascota = req.body;
-    req.collection.updateOne({_id:id}, {$set:mascota}).then(result=>{
+    let book = req.body;
+    req.collection.updateOne({_id:id}, {$set:book}).then(result=>{
         res.send({success:true});
     }).catch(err=>{
         res.send({success:false})

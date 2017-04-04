@@ -7,8 +7,8 @@ router.use((req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-    let donacion = req.body;
-    req.collection.insert(donacion).then(result => {
+    let book = req.body;
+    req.collection.insert(book).then(result => {
         res.send({ success: true });
     }).catch(err => {
         res.send({ success: false });
