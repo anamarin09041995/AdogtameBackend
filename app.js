@@ -11,7 +11,7 @@ var cors = require('cors');
 var users = require('./routes/users');
 var mascotas = require('./routes/mascotas');
 var fundaciones = require('./routes/fundaciones');
-var donaciones = require('./routes/donaciones');
+//var donaciones = require('./routes/donaciones');
 
 var app = express();
 app.use(cors());
@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', users);
 app.use('/mascotas', mascotas);
 app.use('/fundaciones', fundaciones);
-app.use('/donaciones', donaciones);
+//app.use('/donaciones', donaciones);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
