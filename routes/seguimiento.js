@@ -6,11 +6,27 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get("/", (req, res, next) => {
-    req.collection.find().toArray().then(data => {
+router.get("/:id", (req, res, next) => {
+    let id =  req.params.id;
+    req.collection.find({ "usuario.id":id }).toArray().then(data => {
         res.send(data);
     }).catch(err => {
         res.send([]);
+    });
+});
+
+router.get("/:id/mascota/:nombre", (req, res, next) => {
+    let id =  req.params.id;
+    let nombre = req.params.nombre;
+    req.collection.findOne({ "usuario.id":id, nombre: nombre   }).toArray().then(data => {
+        if(data){
+            res.send(data);
+        }else{
+            res.status(404).send();
+        }
+        
+    }).catch(err => {
+        res.status(404).send();
     });
 });
 
