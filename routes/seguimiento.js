@@ -18,7 +18,7 @@ router.get("/:id", (req, res, next) => {
 router.get("/:id/mascota/:nombre", (req, res, next) => {
     let id =  req.params.id;
     let nombre = req.params.nombre;
-    req.collection.findOne({ "usuario.id":id, nombre: nombre   }).toArray().then(data => {
+    req.collection.findOne({ "usuario.id":id, nombre: nombre   }).then(data => {
         if(data){
             res.send(data);
         }else{
