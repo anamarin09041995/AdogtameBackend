@@ -13,7 +13,6 @@ var mascotas = require('./routes/mascotas');
 var fundaciones = require('./routes/fundaciones');
 var donaciones = require('./routes/donaciones');
 var seguimiento = require('./routes/seguimiento');
-var seguimiento = require('./routes/adopcion');
 const nodemailer = require('nodemailer');
 
 
