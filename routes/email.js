@@ -11,18 +11,18 @@ router.post("/", (req, res, next) => {
     let email = req.body;
     res.send(req.body);
     // let transporter = nodemailer.createTransport({
-    //     service: 'gmail',
-    //     auth: {
-    //         user: 'anamarin@unicauca.edu.co',
-    //         pass: '191012seekquiet'
-    //     }
-    // });
+    //      service: 'gmail',
+    //      auth: {
+    //          user: 'anamarin@unicauca.edu.co',
+    //          pass: '191012seekquiet'
+    //      }
+    //  });
     // let mailOptions = {
-    //     from: '"Fred Foo 👻" <anamarin@unicauca.edu.co>', // sender address
-    //     to: 'juanmarinmartinez@gmail.com', // list of receivers
-    //     subject: 'Hello ✔', // Subject line
-    //     text: 'Hello world ?', // plain text body
-    //     html: '<b>Hello world ?</b>' // html body
+    //     from: ' <anamarin@unicauca.edu.co>', 
+    //     to: 'juanmarinmartinez@gmail.com', 
+    //     subject: 'Hello ✔', 
+    //     text: 'Hello world ?', 
+    //     html: '<b>Hello world ?</b>'
     // };
 
     // transporter.sendMail(mailOptions, (error, info) => {
@@ -34,11 +34,11 @@ router.post("/", (req, res, next) => {
     //     console.log('Message %s sent: %s', info.messageId, info.response);
     // });
 
-    // req.collection.insert(email).then(result => {
-    //     res.send({ success: true });
-    // }).catch(err => {
-    //     res.send({ success: false });
-    // });
+    req.collection.insert({"usuario.email":email}).then(result => {
+         res.send({ success: true });
+     }).catch(err => {
+         res.send({ success: false });
+     });
 });
 
 // send mail with defined transport object
