@@ -33,11 +33,11 @@ router.post("/", (req, res, next) => {
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
 
-    req.collection.insert(email).then(result => {
-        res.send({ success: true });
-    }).catch(err => {
-        res.send({ success: false });
-    });
+    // req.collection.insert(email).then(result => {
+    //     res.send({ success: true });
+    // }).catch(err => {
+    //     res.send({ success: false });
+    // });
 });
 
 // send mail with defined transport object
