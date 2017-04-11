@@ -8,12 +8,12 @@ router.use((req, res, next) => {
 
 router.post("/email", (req, res, next) => {
     let email = req.body;
-    res.send(req.body);
-    req.collection.insert(email).then(result => {
-        res.send({ success: true });
-    }).catch(err => {
-        res.send({ success: false });
-    });
+    res.send({ success: true });
+    // req.collection.insert(email).then(result => {
+    //     res.send({ success: true });
+    // }).catch(err => {
+    //     res.send({ success: false });
+    // });
 });
 
 module.exports = router;
