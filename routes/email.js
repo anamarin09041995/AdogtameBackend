@@ -18,7 +18,7 @@ router.post("/", (req, res, next) => {
     });
     let mailOptions = {
         from: '"Fred Foo 👻" <anamarin@unicauca.edu.co>', // sender address
-        to: 'anamarinmartinez0904@outlook.es', // list of receivers
+        to: 'anamarin@unicauca.edu.co', // list of receivers
         subject: 'Hello ✔', // Subject line
         text: 'Hello world ?', // plain text body
         html: '<b>Hello world ?</b>' // html body
