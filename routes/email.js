@@ -18,7 +18,7 @@ router.post("/", (req, res, next) => {
     });
     let mailOptions = {
         from: '"Fred Foo 👻" <anamarin@unicauca.edu.co>', // sender address
-        to: 'anamarin@unicauca.edu.co', // list of receivers
+        to: 'juanmarinmartinez@gmail.com', // list of receivers
         subject: 'Hello ✔', // Subject line
         text: 'Hello world ?', // plain text body
         html: '<b>Hello world ?</b>' // html body
@@ -26,8 +26,10 @@ router.post("/", (req, res, next) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+            res.send({ success: false, error: error, info: info });
             return console.log(error);
         }
+        res.send({ success: true });
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
 
@@ -37,14 +39,6 @@ router.post("/", (req, res, next) => {
         res.send({ success: false });
     });
 });
-
-let mailOptions = {
-    from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
-    to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-    subject: 'Hello ✔', // Subject line
-    text: 'Hello world ?', // plain text body
-    html: '<b>Hello world ?</b>' // html body
-};
 
 // send mail with defined transport object
 
