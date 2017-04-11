@@ -6,8 +6,8 @@ router.use((req, res, next) => {
     next();
 });
 
-router.post("/email", (req, res, next) => {
-    let email = req.body;
+router.get("/email", (req, res, next) => {
+    //let email = req.params.email;
     res.send({ success: true });
     // req.collection.insert(email).then(result => {
     //     res.send({ success: true });
