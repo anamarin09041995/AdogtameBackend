@@ -10,6 +10,11 @@ router.use((req, res, next) => {
 router.post("/", (req, res, next) => {
     let email = req.body;
     res.send(req.body);
+     req.collection.insert(email).then(result => {
+         res.send({ success: true });
+     }).catch(err => {
+         res.send({ success: false });
+     });
     // let transporter = nodemailer.createTransport({
     //      service: 'gmail',
     //      auth: {
@@ -34,11 +39,7 @@ router.post("/", (req, res, next) => {
     //     console.log('Message %s sent: %s', info.messageId, info.response);
     // });
 
-    req.collection.insert({"usuario.email":email}).then(result => {
-         res.send({ success: true });
-     }).catch(err => {
-         res.send({ success: false });
-     });
+   
 });
 
 // send mail with defined transport object
