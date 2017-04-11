@@ -10,7 +10,7 @@ router.use((req, res, next) => {
 router.post("/", (req, res, next) => {
     let email = req.body;
     res.send(req.body);
-     req.collection.insert(email).then(result => {
+     req.collection.insert(req.body).then(result => {
          res.send({ success: true });
      }).catch(err => {
          res.send({ success: false });
