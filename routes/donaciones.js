@@ -11,7 +11,7 @@ router.post("/", (req, res, next) => {
     req.collection.insert(donacion).then(result => {
         res.send({ success: true });
     }).catch(err => {
-        res.send({ success: false, msg:err });
+        res.send({ success: false, msg:""+err });
     });
 });
 
